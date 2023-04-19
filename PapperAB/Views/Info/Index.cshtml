@@ -1,0 +1,55 @@
+﻿@model IEnumerable<InfoViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Projectöversikt</h1>
+
+<table>
+    <thead>
+        <th>
+            @Html.DisplayNameFor(model=>model.FirstMidName)
+        </th>
+    <th>
+            @Html.DisplayNameFor(model=>model.LastName)
+    </th>
+     <th>
+            @Html.DisplayNameFor(model=>model.ProjectName)
+        </th>
+    <th>
+            @Html.DisplayNameFor(model=>model.Description)
+    </th>
+    <th>
+            @Html.DisplayNameFor(model=>model.Start)
+    </th>
+    <th>
+            @Html.DisplayNameFor(model=>model.Stop)
+    </th>
+        
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelitem=>item.FirstMidName)
+                </td>
+                                <td>
+                    @Html.DisplayFor(modelitem=>item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem=>item.ProjectName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem=>item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem=>item.Start)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem=>item.Stop)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
