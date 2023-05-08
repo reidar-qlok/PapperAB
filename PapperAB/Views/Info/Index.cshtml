@@ -1,4 +1,4 @@
-﻿@model IEnumerable<InfoViewModel>
+﻿@model IEnumerable<ProjectList>
 @{
     ViewData["Title"] = "Index";
 }
@@ -7,17 +7,18 @@
 
 <table>
     <thead>
+        <tr>
         <th>
-            @Html.DisplayNameFor(model=>model.FirstMidName)
+            @Html.DisplayNameFor(model=>model.Employees.FirstMidName)
         </th>
     <th>
-            @Html.DisplayNameFor(model=>model.LastName)
+            @Html.DisplayNameFor(model=>model.Employees.LastName)
     </th>
      <th>
-            @Html.DisplayNameFor(model=>model.ProjectName)
+            @Html.DisplayNameFor(model=>model.Projects.ProjectName)
         </th>
     <th>
-            @Html.DisplayNameFor(model=>model.Description)
+            @Html.DisplayNameFor(model=>model.Projects.Description)
     </th>
     <th>
             @Html.DisplayNameFor(model=>model.Start)
@@ -25,23 +26,23 @@
     <th>
             @Html.DisplayNameFor(model=>model.Stop)
     </th>
-        
+        </tr>
     </thead>
     <tbody>
         @foreach(var item in Model)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelitem=>item.FirstMidName)
+                    @Html.DisplayFor(modelitem=>item.Employees.FirstMidName)
                 </td>
                                 <td>
-                    @Html.DisplayFor(modelitem=>item.LastName)
+                    @Html.DisplayFor(modelitem=>item.Employees.LastName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelitem=>item.ProjectName)
+                    @Html.DisplayFor(modelitem=>item.Projects.ProjectName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelitem=>item.Description)
+                    @Html.DisplayFor(modelitem=>item.Projects.Description)
                 </td>
                 <td>
                     @Html.DisplayFor(modelitem=>item.Start)
