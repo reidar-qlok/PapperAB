@@ -1,0 +1,52 @@
+﻿@model PapperAB.Models.ProjectList
+<form asp-action="CreateInfo">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Create Apartment</h1>
+        <hr />
+        <div class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="col-2">
+                <label asp-for="Employees.FirstMidName" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="form-group col-10 pb-3">
+
+                <select asp-for="FK_EmployeeId" class="form-control" asp-items="ViewBag.EDropDownValues"></select>
+                <span asp-validation-for="Employees.FirstMidName" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="Projects.ProjectName" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="form-group col-10 pb-3">
+              
+                <select asp-for="FK_ProjectId" class="form-control" asp-items="ViewBag.PDropDownValues"></select>
+                
+                <span asp-validation-for="Projects.ProjectName" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Start" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Start" class="form-control" />
+                <span asp-validation-for="Start" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Stop" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="form-group col-10 pb-3">
+                <input asp-for="Stop" class="form-control" />                
+                <span asp-validation-for="Stop" class="text-danger"></span>
+            </div>
+            <div class="col-5">
+                <input type="submit" value="Create" class="btn btn-success form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+

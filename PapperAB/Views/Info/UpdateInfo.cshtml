@@ -1,0 +1,46 @@
+﻿@model PapperAB.Models.ProjectList
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Update</h1>
+
+<h4>Employee</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UpdateInfo">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Employees.FirstMidName" class="control-label"></label>
+                <select asp-for="FK_EmployeeId" class="form-control" asp-items="ViewBag.EDropDownValues"></select>
+                <span asp-validation-for="Employees.FirstMidName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Projects.ProjectName" class="control-label"></label>
+                <select asp-for="FK_ProjectId" class="form-control" asp-items="ViewBag.PDropDownValues"></select>
+                <span asp-validation-for="Projects.ProjectName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Start" class="control-label"></label>
+                <input asp-for="Start" class="form-control" />
+                <span asp-validation-for="Start" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Stop" class="control-label"></label>
+                <input asp-for="Stop" class="form-control" />
+                <span asp-validation-for="Stop" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

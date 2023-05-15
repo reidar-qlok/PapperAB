@@ -10,7 +10,9 @@ namespace PapperAB.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProjectListId { get; set; }
+        [DataType(DataType.Date)]
         public DateTime Start { get; set; }
+        [DataType(DataType.Date)]
         public DateTime Stop { get; set; }
         [ForeignKey("Employees")]
         public int FK_EmployeeId { get; set; }
